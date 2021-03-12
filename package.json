@@ -1,0 +1,71 @@
+{
+  "name": "react-bootstrap-timezone-picker",
+  "version": "2.0.1",
+  "description": "Timezone picker for react-bootstrap",
+  "main": "dist/react-bootstrap-timezone-picker.min.js",
+  "scripts": {
+    "build": "npm run build:max && npm run build:min",
+    "build:max": "NODE_ENV=production webpack --verbose --colors --display-error-details src/index.jsx --output-filename react-bootstrap-timezone-picker.js",
+    "build:min": "NODE_ENV=production webpack --verbose --colors --display-error-details -p src/index.jsx --output-filename react-bootstrap-timezone-picker.min.js",
+    "coverage": "NODE_ENV=production webpack && nyc _mocha --require @babel/register && NODE_ENV=production webpack -p",
+    "demo": "NODE_ENV=production webpack --verbose --colors --display-error-details --config webpack.demo.config.js -p demo/index.jsx demo/dist/index.js",
+    "lint": "eslint src --ext .js,.jsx",
+    "test": "mocha --require @babel/register --require test/setup.js test/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yury-dymov/react-bootstrap-timezone-picker.git"
+  },
+  "keywords": [
+    "react",
+    "bootstrap",
+    "timezone",
+    "picker"
+  ],
+  "author": "Yuri Dymov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yury-dymov/react-bootstrap-timezone-picker/issues"
+  },
+  "homepage": "https://github.com/yury-dymov/react-bootstrap-timezone-picker#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "chai": "^4.2.0",
+    "chai-enzyme": "^1.0.0-beta.1",
+    "cheerio": "^1.0.0-rc.3",
+    "css-loader": "^3.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "jsdom": "^15.1.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "react": "^16.8.6",
+    "react-bootstrap": "^1.0.0-beta.8",
+    "react-dom": "^16.8.6",
+    "sinon": "^7.3.2",
+    "style-loader": "^0.23.1",
+    "webpack": "^3.12.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-bootstrap": ">=1.0.0-alpha"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.7.2"
+  }
+}
